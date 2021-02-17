@@ -1,0 +1,27 @@
+<h1>Pictures</h1>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>File name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <tr>
+      <td><%= picture.file_name %></td>
+      <td><%= picture.user_name %></td>
+      <td><%= link_to 'Show', picture, class:"btn btn-outline-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Picture', new_picture_path, class:"btn btn-secondary" %>
+
+

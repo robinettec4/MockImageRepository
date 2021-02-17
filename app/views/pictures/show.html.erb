@@ -1,0 +1,14 @@
+<p>
+  <strong>File name:</strong>
+  <%= @picture.file_name %>
+  <strong> User: </strong>
+  <%= @picture.user_name %>
+</p>
+<%= image_tag(@picture.image) %>
+
+<% if user_signed_in? %>
+	<% if current_user.id == @picture.user_id %>
+		<%= link_to 'Edit', edit_picture_path(@picture) %> | <%= link_to 'Destroy', @picture, method: :delete, data: { confirm: 'Are you sure?' } %> | 
+	<% end %>
+<% end %>
+<%= link_to 'Back', pictures_path %>
